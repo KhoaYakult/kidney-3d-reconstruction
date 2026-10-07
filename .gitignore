@@ -1,4 +1,47 @@
 # Raw working data and checkpoints (kept locally, never pushed)
 KIPA22/
 KITS23/
+
+# Medical data and model artefacts: never commit
+*.nii
+*.nii.gz
+*.npz
+*.npy
+*.dcm
+*.zip
+*.model
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.obj
+*.glb
+*.ply
+*.stl
+*.off
+data/*
+!data/README.md
+
+# Secrets and local files
+.env
+kaggle.json
 .DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Private notes (kept locally, not published)
+docs/
+
+# Files adapted from Stanford's NeRP (research-only, no redistribution licence): kept locally
+src/nerp/networks.py
+src/nerp/data.py
+src/nerp/train_image_regression_3d.py
+src/nerp/utils.py
+src/nerp/configs/ct_recon.yaml
+src/nerp/configs/ct_recon_3d.yaml
+src/nerp/configs/image_regression.yaml
+src/nerp/configs/image_regression_3d.yaml
+
+# Duplicate demo
+results/3d_demos/*_v0.html
