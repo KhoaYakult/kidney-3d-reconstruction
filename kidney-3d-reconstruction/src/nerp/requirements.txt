@@ -1,0 +1,10 @@
+torch>=1.7.0
+numpy
+scikit-image
+nibabel
+pyyaml
+tqdm
+matplotlib
+scipy
+configargparse
+tensorboardX

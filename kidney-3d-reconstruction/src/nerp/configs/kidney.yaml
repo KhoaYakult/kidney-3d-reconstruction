@@ -1,0 +1,35 @@
+# --- CẤU HÌNH CHUNG ---
+max_iter: 25000             # Số vòng lặp (khoảng 2-3 tiếng)
+model: 'SIREN'
+loss: 'L2'
+optimizer: 'Adam'
+lr: 0.0001
+beta1: 0.9
+beta2: 0.999
+weight_decay: 0
+
+# --- CẤU HÌNH DỮ LIỆU ---
+data: '3d'
+img_path: 'data/ct_data/kidney_13.npz'  # <--- ĐÃ TRỎ VÀO FILE NPZ
+img_size: 161                           # <--- Kích thước (lấy số nhỏ nhất trong 3 chiều của bạn)
+batch_size: 8192                        # Giảm xuống 2048 nếu máy yếu
+display_image_num: 5
+
+# --- CẤU HÌNH ENCODER ---
+encoder:
+  embedding: 'None'
+  scale: 10
+  embedding_size: 256
+  coordinates_size: 3
+
+# --- CẤU HÌNH MẠNG ---
+net:
+  network_input_size: 3   # 256 * 2
+  network_width: 256
+  network_depth: 5
+  network_output_size: 1
+
+# --- LOGGING ---
+log_iter: 100
+val_iter: 2000              # Kiểm tra mỗi 2000 vòng
+image_save_iter: 5000       # Lưu ảnh/model mỗi 5000 vòng
